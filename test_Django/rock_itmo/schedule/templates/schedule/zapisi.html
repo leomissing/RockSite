@@ -1,0 +1,71 @@
+{% extends "mainPage/wrapper.html" %}
+
+{% block content %}
+<a href="{% url 'zapis_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">Новая запись</span></a>
+  <div class="row justify-content-center">
+    <div class="col-md-auto">
+      <h4>Понедельник</h4>
+      {% for zapis in object_list %}
+      {% if zapis.week_day == 'Понедельник' %}
+      <h5>{{zapis.name}}</h5>
+      <h5>{{zapis.start_time}}</h5>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="col-md-auto">
+      <h4>Вторник</h4>
+      {% for zapis in object_list %}
+      {% if zapis.week_day == 'Вторник' %}
+      <h5>{{zapis.name}}</h5>
+      <h5>{{zapis.start_time}}</h5>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="col-md-auto">
+      <h4>Среда</h4>
+      {% for zapis in object_list %}
+      {% if zapis.week_day == 'Среда' %}
+      <h5>{{zapis.name}}</h5>
+      <h5>{{zapis.start_time}}</h5>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="col-md-auto">
+      <h4>Четверг</h4>
+      {% for zapis in object_list %}
+      {% if zapis.week_day == 'Четверг' %}
+      <h5>{{zapis.name}}</h5>
+      <h5>{{zapis.start_time}}</h5>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="col-md-auto">
+      <h4>Пятница</h4>
+      {% for zapis in object_list %}
+      {% if zapis.week_day == 'Пятница' %}
+      <h5>{{zapis.name}}</h5>
+      <h5>{{zapis.start_time}}</h5>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="col-md-auto">
+      <h4>Суббота</h4>
+      {% for zapis in object_list %}
+      {% if zapis.week_day == 'Суббота' %}
+      <h5>{{zapis.name}}</h5>
+      <h5>{{zapis.start_time}}</h5>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="col-md-auto">
+      <h4>Воскресенье</h4>
+      {% for zapis in object_list %}
+      {% if zapis.week_day == 'Воскресенье' %}
+      <h5>{{zapis.name}}</h5>
+      <h5>{{zapis.start_time}}</h5>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
