@@ -1,0 +1,9 @@
+{% extends "mainPage/wrapper.html" %}
+
+{% block content %}
+<form class= "form-inline" action="" method="post">
+     {% csrf_token %}
+     {{ form.as_p }}
+     <button type="submit" class="btn btn-success">Войти</button>
+   </form>
+{% endblock %}

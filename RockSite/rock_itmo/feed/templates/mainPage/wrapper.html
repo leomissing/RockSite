@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <meta http-equiv="X-RU-Compatible" content="ie=edge">
+    <title>RockiTmo</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/mycss.css' %}" type="text/css">
+  </head>
+  <body>
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Music</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news/">News</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="/schedule/">schedule</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link" href="/media/">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            {% if user.is_authenticated %}
+              <span class="navbar-text">
+              Привет, {{ user.username }}!
+              </span>
+              <button type="button" class="btn btn-light btn-sm"><a href="/logout">Выход</a></button>
+            {% else %}
+              <button type="button" class="btn btn-light btn-sm"><a href="/login">Вход</a></button>
+              <button type="button" class="btn btn-light btn-sm"><a href="/register">Регистрация</a></button>
+            {% endif %}
+          </form>
+        </div>
+      </nav>
+    </div>
+     <div class="container">
+    <div class="card border-0 shadow my-5">
+        <div class="card-body p-5">
+    <div class="jumbotron">
+
+      <h1>{% include "mainPage/includes/point.html" %}</h1>
+    </div>
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+    </div>
+  </div>
+</div>
+  <div class="container" >
+    <!-- <img src="{% static 'mainPage/image/mc-ride.png' %}" class="img-thumbnail">
+!-->
+    <hr>
+    &copy; Все права защищены 2018
+  </div>
+  </body>
+</html>

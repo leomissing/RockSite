@@ -1,0 +1,11 @@
+{% extends "mainPage/wrapper.html" %}
+
+
+{% block content %}
+
+{% for bron in object_list %}
+  <h3>{{bron.name}}</h3>
+  <h5>{{bron.start_time}}</h5>
+  <h5>{{bron.week_day}}</h5>
+{% endfor %}
+{% endblock %}
